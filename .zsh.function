@@ -458,7 +458,7 @@ cs() {
     if [  -z "$1" ] ; then
         echo "Please provide a client spec name"
         echo "Client specs for ${USER} are:"
-        p4 clients | grep ${USER}
+        p4 clients -u ${USER}
     else
         export P4CLIENT=$1
     fi
