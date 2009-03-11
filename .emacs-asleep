@@ -1,0 +1,394 @@
+;; A.Sleeps .emacs
+;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Global settings and commands for all systems                 ;;
+;;                                                              ;;
+;; Some functions are in here and some are add-hook'ed          ;;
+;; You may need to remove some things to makeup for the missing ;;
+;; major modes you don't have.                                  ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Modified load-path
+(setq load-path (cons (expand-file-name "~/emacs") load-path))
+(setq load-path (cons (expand-file-name "~/emacs/share/emacs/site-lisp") load-path))
+;;(setq load-path (cons (expand-file-name "/usr/local/share/emacs/21.3.50/lisp") load-path))
+
+;; Turn on global-font-lock
+(global-font-lock-mode)
+
+;; Eshell customizations
+'(eshell-output-filter-functions (quote (eshell-handle-control-codes eshell-watch-for-password-prompt eshell-postoutput-scroll-to-bottom)))
+'(eshell-scroll-show-maximum-output t)
+'(eshell-scroll-to-bottom-on-output t)
+
+;; set the new-tab function as my browse-url default
+;(setq browse-url-browser-function 'browse-url-safari)
+
+;; Set the CVS diff type
+(setq diff-switches "-u")
+
+;; Smooth Scrolling
+(setq scroll-conservatively 10000)
+
+;; AutoImageFile mode - ON BY DEFAULT
+;;(autoload 'auto-image-file-mode "image viewing mode" "Mode for viewing images." t)
+
+;; TRAMP load
+(require 'tramp)
+(setq tramp-default-method "ssh")
+;; Attempt to stop TRAMP from complaining about
+;; files not being able to be saved. So far...
+;; no luck. If you have a correct way to do this
+;; please contact me (asleep.net/contact/).
+(add-hook 'tramp-mode-user-hook
+	  (lambda ()
+	    (setq buffer-auto-save-file-name nil)))
+
+;; Make executable scripts +x on save
+(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
+
+;; Thumbs mode
+(autoload 'thumbs "thumbs" "Preview images in a directory." t)
+
+;; Session mode
+(require 'session)
+(add-hook 'after-init-hook 'session-initialize)
+
+;; GPL Stuffs (old, now dead?)
+;(require 'gpl)
+;(require 'gpl-copying)
+
+;; DocBook IDE mode
+(autoload 'docbook-mode "docbookide" "Major mode for DocBook documents." t)
+
+;; Add docbook and XML files to list
+(add-to-list 'auto-mode-alist '("\\.sgml$" . docbook-mode))
+(add-to-list 'auto-mode-alist '("\\.xml$" . docbook-mode))
+
+(require 'php-mode)
+(add-to-list 'auto-mode-alist '("\\.rvlx$" . php-mode))
+;; Make TAB be 2 spaces in php-mode
+;; http://www.asleep.net/hacking/php/style/
+(add-hook 'php-mode-user-hook
+	  '(lambda ()
+	     (setq default-tab-width 2)
+	     (setq indent-tabs-mode nil)))
+
+;; just what it says - NOT WORKING
+(defun indent-or-complete ()
+  "Complete if point is at end of line, and indent line."
+  (interactive)
+  (if (looking-at "$")
+      (hippie-expand nil))
+  (indent-for-tab-command))
+(add-hook 'php-mode-common-hook
+ 	  (function (lambda ()
+ 		      (local-set-key (kbd "<tab>") 'indent-or-complete))))
+
+;; Auto-load eldoc mode
+(autoload 'turn-on-eldoc-mode "eldoc" nil t)
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+
+;; To-Do mode settings
+(autoload 'todo-mode "todo-mode"
+  "Major mode for editing TODO lists." t)
+(autoload 'todo-show "todo-mode"
+  "Show TODO items." t)
+(autoload 'todo-insert-item "todo-mode"
+  "Add TODO item." t)
+
+;; mail-mode settings
+(defun axels-mail-mode-hook ()
+  (turn-on-auto-fill)                               ;;; Auto-Fill is necessary for mails
+  (turn-on-font-lock)                               ;;; Font-Lock is always cool *g*
+  (flush-lines "^\\(> \n\\)*> -- \n\\(\n?> .*\\)*") ;;; Kills quoted sigs.
+  (not-modified)                                    ;;; We haven't changed the buffer, haven't we? *g*
+  (setq make-backup-files nil)                      ;;; No backups necessary.
+  )
+(or (assoc "mutt-" auto-mode-alist)
+    (setq auto-mode-alist (cons '("mutt-" . mail-mode) auto-mode-alist)))
+(add-hook 'mail-mode-hook 'axels-mail-mode-hook)
+
+;; Mouse Scroll-wheel
+(defun sd-mousewheel-scroll-up (event)
+  "Scroll window under mouse up by five lines."
+  (interactive "e")
+  (let ((current-window (selected-window)))
+    (unwind-protect
+	(progn 
+	  (select-window (posn-window (event-start event)))
+	  (scroll-up 2))
+      (select-window current-window))))
+(defun sd-mousewheel-scroll-down (event)
+  "Scroll window under mouse down by five lines."
+  (interactive "e")
+  (let ((current-window (selected-window)))
+    (unwind-protect
+	(progn 
+	  (select-window (posn-window (event-start event)))
+	  (scroll-down 2))
+      (select-window current-window))))
+
+;;
+;; General settings for all hosts
+;;
+
+;; display the time in the modeline
+(display-time)
+
+;; display the column number in the modeline
+(setq column-number-mode t)
+
+;; turn off the menu bar in gui mode
+(menu-bar-mode nil)
+
+;; turn off the shortcut buttons in gui mode
+(tool-bar-mode nil)
+
+;; save the line position when using pgup/pgdn
+(setq scroll-preserve-screen-position t)
+
+;; turn off auto-save mode
+(auto-save-mode nil)
+
+;; marck blocks
+(transient-mark-mode 1)
+
+;; Compression Mode
+(auto-compression-mode 1)
+
+;;
+;; global-set-keys for all hosts
+;;
+
+;; Turn on the mouse scroll-wheel events
+(global-set-key (kbd "<mouse-5>") 'sd-mousewheel-scroll-up)
+(global-set-key (kbd "<mouse-4>") 'sd-mousewheel-scroll-down)
+
+;; Never iconify...
+;; If you must, use (C-x C-z)
+(when window-system
+  (global-unset-key "\C-z"))
+
+;; ...never quit by mistake...
+(global-set-key [(control x) (control c)]
+		(function 
+		 (lambda () (interactive) 
+		   (cond ((y-or-n-p "Quit editor? ")
+			  (save-buffers-kill-emacs))))))
+
+;; ...never switch to overwrite mode, not even accidentally
+(global-set-key [insert] 
+		(function 
+		 (lambda () (interactive) 
+		   (message "Sorry, overwrite mode has been disabled forever."))))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Functions available for all systems           ;;
+;; Some of these functions are added by default  ;;
+;; with add-hook's but most are optional use.    ;;
+;; Simply define a keycombo in the local section ;;
+;; and rock-on. These can also be called via     ;;
+;; M-x <function name>                           ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Print the ASCII table
+(defun ascii-table ()
+  "Print the ascii table. Based on a defun by Alex Schroeder <asc@bsiag.com>"
+  (interactive)
+  (switch-to-buffer "*ASCII*")
+  (erase-buffer)
+  (insert (format "ASCII characters up to number %d.\n" 254))
+  (let ((i 0))
+    (while (< i 254)
+      (setq i (+ i 1))
+      (insert (format "%4d %c\n" i i))))
+  (beginning-of-buffer))
+
+;; Select everything
+(defun select-all ()
+  (interactive)
+  (set-mark (point-min))
+  (goto-char (point-max)))
+
+;; Insert the date
+(defun insert-date ()
+  "Insert date at point."
+  (interactive)
+  (insert (format-time-string "%a %b %e, %Y %l:%M %p")))
+
+;; Convert from DOS > UNIX
+(defun dos-unix ()
+  (interactive)
+  (goto-char (point-min))
+  (while (search-forward "\r" nil t) (replace-match "")))
+
+;; Convert from UNIX > DOS
+(defun unix-dos ()
+  (interactive)
+  (goto-char (point-min))
+  (while (search-forward "\n" nil t) (replace-match "\r\n")))
+
+;; PHP lint check
+;; Assumes "php" is in $PATH
+(defun php-lint ()
+  "Performs a PHP lint-check on the current file."
+  (interactive)
+  (shell-command (concat "php -l " (buffer-file-name))))
+
+;; Custom browse-url to open sites in a new moz tab
+;; new-window ignored
+;; (defun browse-url-mozilla-new-tab (url &optional new-window)
+;;   "Open URL in a new tab in Mozilla."
+;;   (interactive (browse-url-interactive-arg "URL: "))
+;;   (unless
+;;       (string= "" 
+;; 	       (shell-command-to-string 
+;; 		(concat "mozilla -remote 'openURL(" url ",new-tab)'")))
+;;     (message "Starting Mozilla...")
+;;     (start-process (concat "mozilla " url) nil "mozilla" url)
+;;     (message "Starting Mozilla...done")))
+
+;; Custom browse-url to open sites in a new Safari window.
+;; (defun browse-url-safari (url &optional new-window)
+;;   "Open URL in a new Safari window."
+;;   (interactive (browse-url-interactive-arg "URL: "))
+;;   (unless
+;;       (string= ""
+;; 	       (shell-command-to-string
+;; 		(concat "open -a Safari " url)))
+;;     (message "Starting Safari...")
+;;     (start-process (concat "open -a Safari " url) nil "open -a Safari " url)
+;;     (message "Starting Safari... done")))
+
+;; Insert PHP Class skel
+(defun insert-php-class-skel ()
+  "Inserts skeleton PHP class"
+  (interactive)
+  (insert-file-contents "~/emacs/templates/php_class.php"))
+
+;; Insert PHP procedural skel
+(defun insert-php-proc-skel ()
+  "Inserts skeleton PHP procedural file"
+  (interactive)
+  (insert-file-contents "~/emacs/templates/php_proc.php"))
+
+;; Emacs Reloaded
+;; Change the " A.Sleep" to be " Yourname" obviously...
+;;
+;; If you wish to use this add the following line
+;; (add-hook 'after-init-hook 'emacs-reloaded)
+(defun emacs-reloaded ()
+  (animate-string (concat ";; Initialization successful, welcome to "
+  			  (substring (emacs-version) 0 16)
+			  " A.Sleep.")
+		  0 0)
+  (newline-and-indent)  (newline-and-indent)
+  )
+
+;; Self-compile config files
+(defun tp-config-compile ()
+  "Bytecompile configuration files if necessary.
+If compilation fails, disallow the buffer to be killed."
+  (if (and
+       (member (buffer-name) `(".emacs" "functions.el" "global.el" "local.el"))
+       (file-newer-than-file-p
+    (buffer-file-name)
+    (concat
+     (replace-regexp-in-string "\\.el" "" (buffer-file-name))
+     ".elc")))
+      (byte-compile-file (buffer-file-name))
+    ;; for use in query-functions, this should return t on all other
+    ;; buffers.
+    t))
+
+;; auto-compile our config files
+(add-hook 'after-save-hook 'tp-config-compile)
+
+;; PHPDoc docblock
+(defun php-insert-comment () (interactive)
+  "insert /**  */ on a separate line and position point between it"
+  (indent-according-to-mode)
+  (insert "/**  */")
+  (goto-char (- (point) 3))
+  )
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Local Settings for the PowerBook ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(progn
+  (defun title-set-title ()
+    "Set title to current`s buffer name"
+    (let ((name (format "A.Sleep.emacs: %s"
+			(or (buffer-file-name (current-buffer))
+			    (buffer-name (current-buffer))))))
+      (modify-frame-parameters (selected-frame)
+			       (list (cons `name name)))))
+  (setq post-command-hook (cons `title-set-title post-command-hook))
+  )
+
+;; Fortune file
+(setq fortune-file "/sw/share/fortune/fortunes")
+
+;; Turn off error noise always
+(setq ring-bell-function 'ignore)
+
+;; Turn off *scratch* buffer save files
+(with-current-buffer (get-buffer "*scratch*")
+	(auto-save-mode -1))
+
+;;(setq mac-command-key-is-meta nil)
+
+;; Color theme
+(require 'color-theme)
+(color-theme-aliceblue)
+
+;; Set my abbrev filename
+(setq abbrev-file-name
+      "~/.emacs.d/abbrev_defs")
+;; Abbrevs Settings
+(setq save-abbrevs t)
+(quietly-read-abbrev-file)
+(abbrev-mode 1)
+
+;; hitting "PrtScrn" prints a pretty buffer (not so good on non-color
+;; printers)
+(global-set-key [print] 'ps-print-buffer-with-faces)
+
+;; "goto line" prompt (double use as C-g also "quits" a current action)
+;; Some people find this a little hard to get used to. I've gotten used to
+;; the double-use and I'm quite fond of it.
+(global-set-key "\C-g" 'goto-line)
+
+;; Print the standard PHP Header
+;(global-set-key [f2] 'header)
+
+;; Print a PHPDocblock
+(global-set-key [f3] 'php-insert-comment)
+
+;; Ctrl-Tab switches buffers
+(global-set-key [(ctrl tab)] 'bury-buffer)
+
+;; PHP Lint-check
+(global-set-key [f5] 'php-lint)
+
+;; ChangeLog entry
+(global-set-key [f8] 'add-change-log-entry-other-window)
+
+;; Ibuffer goods
+(global-set-key "\C-x\C-b" 'ibuffer)
+
+;; php-class template
+(global-set-key [f6] 'insert-php-class-skel)
+
+;; php-proc template
+(global-set-key [f7] 'insert-php-proc-skel)
+
+;; Select the whole buffer
+(global-set-key "\C-a" 'mark-whole-buffer)
+
+;; add emacs-reloaded to auto-start
+(add-hook 'after-init-hook 'emacs-reloaded)
