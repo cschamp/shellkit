@@ -1,0 +1,4 @@
+Type "make install" to copy these configuration files to your home directory.
+
+Type "make DST=destination" to copy these files to "destination".
+
