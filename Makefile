@@ -6,6 +6,6 @@ SRC = .bash_profile .bashrc .emacs .emacs-asleep .emacs.d \
     .zlogin .zlogout .zsh .zsh.alias .zsh.console .zsh.function \
     .zsh.prompt .zshenv .zshrc
 
-all: 
+all install: 
 	cp -Rvp $(SRC) $(DST)
 
