@@ -348,7 +348,7 @@ If compilation fails, disallow the buffer to be killed."
 
 ;; Set my abbrev filename
 (setq abbrev-file-name
-      "~/.emacs.d/abbrev_defs")
+      "~/.emacsd/abbrev_defs")
 ;; Abbrevs Settings
 (setq save-abbrevs t)
 (quietly-read-abbrev-file)
