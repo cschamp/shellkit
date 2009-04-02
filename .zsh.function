@@ -464,10 +464,3 @@ cs() {
     fi
 }
 
-pm() {
-    if [ -x "/Developer/Applications/Utilities/PackageMaker.app/Contents/MacOS/PackageMaker" ] ; then
-        sudo /Developer/Applications/Utilities/PackageMaker.app/Contents/MacOS/PackageMaker $*
-    else
-        echo "PackageMaker not found at usual place"
-    fi
-}
