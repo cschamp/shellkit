@@ -178,6 +178,7 @@ limit coredumpsize 0 # don't allow coredumps
 # Key bindings
 ###################################
 bindkey -e
+bindkey '^J' push-line
 # bindkey '^W' kill-region
 
 ###################################
