@@ -6,6 +6,7 @@ manpath=(/usr/share/man /usr/local/man /usr/X11R6/man /opt/vmware/man $manpath)
 export MANPATH
 fpath=(~/.zsh/functions $fpath)
 export LD_LIBRARY_PATH=/usr.local/lib:$LD_LIBRARY_PATH
+export PYTHONPATH=/usr/local/lib/python2.5/site-packages:$PYTHONPATH
 case $HOST in
 	selectric*)
 		ami="${HOME}/projects/installers/InstallerDev/Mac/Main/AMI"

@@ -13,6 +13,9 @@ export PATH
 MANPATH=/usr/local/pgsql/man:/usr/local/man:${MANPATH:="${HOME}/man:/usr/local/share/man:/usr/share/man"}
 export MANPATH
 
+PYTHONPATH=/usr/local/lib/python2.5/site-packages:$PYTHONPATH
+export PYTHONPATH
+
 TERM=dtterm	;	export TERM
 
 PAGER=/usr/bin/less	;	export PAGER
