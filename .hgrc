@@ -1,3 +1,6 @@
+# Mercurial init file
 [extensions]
 hgext.graphlog =
+hgext.convert =
+
 
