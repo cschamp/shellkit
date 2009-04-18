@@ -1,6 +1,36 @@
-# Mercurial init file
+[ui]
+username = Craig Schamp
+ssh = ssh -C
+
+[defaults]
+email = --diffstat --git
+
 [extensions]
-hgext.graphlog =
-hgext.convert =
+alias=
+convert=
+extdiff=
+graphlog=
+patchbomb=
+record=
+MacOSXKeychain=/Library/Python/2.5/site-packages/hgext/hgkeychain.py
 
+[alias]
+blame=annotate -u -n
+rec=record
 
+[diff]
+git=True
+
+[email]
+method = smtp
+from = Craig Schamp <cschamp@gmail.com>
+
+[smtp]
+tls = True
+host = smtp.gmail.com
+username = cschamp
+password = 
+
+[extdiff]
+cmd.sbsdiff  = diff
+opts.sbsdiff = -N -b --side-by-side --width=90
