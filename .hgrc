@@ -34,3 +34,10 @@ password =
 [extdiff]
 cmd.sbsdiff  = diff
 opts.sbsdiff = -N -b --side-by-side --width=90
+cmd.chdiff =
+opts.chdiff = --wait
+
+[merge-tools]
+changes.executable = chdiff
+changes.args = --wait $local $other
+
