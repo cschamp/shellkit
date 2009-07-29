@@ -155,6 +155,7 @@ WATCHFMT="[%D %T] %n has %a %l from %M"
 WORDCHARS=
 
 # misc
+[ -x ~/bin/gitchanges.sh ] && GIT_EXTERNAL_DIFF=~/bin/gitchanges.sh
 EDITOR_ZSH=(emacs -nw)
 export EDITOR="/usr/bin/vim"
 which less > /dev/null && export PAGER=less || export PAGER=more
