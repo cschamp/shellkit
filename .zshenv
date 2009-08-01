@@ -33,4 +33,4 @@ psx="${HOME}/projects/psmake/PSMain/main/photoshop/xcode"
 pspi="${HOME}/projects/psmake/PSMain/main/plugins/build/build system files/xcode"
 # XXX [[ -f /Applications/p4merge.app/Contents/MacOS/p4merge ]] && export P4DIFF=/Applications/p4merge.app/Contents/MacOS/p4merge
 [[ -f /usr/bin/chdiff ]] && export P4DIFF="/usr/bin/chdiff --wait"
-[[ -f ~/bin/gitchanges.sh ]] && GIT_EXTERNAL_DIFF=~/bin/gitchanges.sh
+[[ -x ~/bin/gitchanges.sh ]] && export GIT_EXTERNAL_DIFF=~/bin/gitchanges.sh
