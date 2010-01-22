@@ -109,6 +109,9 @@ for key in ${(k)extensions[@]} ; do
   extensions[$key]="$extensions[$key] ${(U)extensions[$key]}"
 done
 
+LSCOLORS="Gxfxcxdxbxegedabagacad"
+export LSCOLORS
+
 if is4 ; then # use something smart to associate colors and extensions
   local -A colors
   colors=()

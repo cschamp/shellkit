@@ -213,4 +213,3 @@
 
 (custom-set-faces)
 
-(load "/Applications/Lispbox/lispbox.el")

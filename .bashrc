@@ -3,15 +3,29 @@
 #							-- Craig Schamp
 # $Id: bashrc,v 1.1 2002/10/08 00:10:12 schamp Exp $
 #
+if [ -x /usr/bin/zsh ] ; then
+    export SHELL=/usr/bin/zsh
+    exec ${SHELL} -l
+fi
+
 export NODENAME
 set notify
 if [ -x /bin/uname ] ; then
 	NODENAME="`/bin/uname -n`"
-	ARCH="`/usr/bin/arch`"
+	ARCH="`/bin/uname -m`"
 else
 	NODENAME="`hostname`"
 	ARCH="`arch`"
 fi
+if [ -x /usr/bin/arch ] ; then
+    ARCH="`/usr/bin/arch`"
+fi
+
+PATH=${HOME}/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+PATH=${PATH}:/Developer/Tools
+PATH=${PATH}:/usr/local/pgsql/bin:/usr/local/mysql/bin
+PATH=${PATH}:/build/trees/bin
+export PATH
 
 ami="${HOME}/projects/installers/InstallerDev/Mac/Main/AMI" ; export ami
 installerdev="${HOME}/projects/installers/InstallerDev" ; export installerdev
@@ -24,7 +38,7 @@ case "$-" in *i* ) INTERACTIVE=true ;; esac
 if [ "$INTERACTIVE" = "true" ] ; then
 
     TTY=`tty`
-    PS1="\[`tput bold`\]$ARCH \$DEPOT \u@selectric\\$\[`tput rmso`\] "
+    PS1="\[`tput bold`\]$ARCH \$DEPOT \u@\h\\$\[`tput rmso`\] "
 
     set -h
 #    set -o vi

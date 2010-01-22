@@ -24,7 +24,7 @@ Darwin*)
 	ISA=`uname -p`
 	;;
 *)
-	ISA=`arch`
+	ISA=`uname -m`
 	;;
 esac
 
