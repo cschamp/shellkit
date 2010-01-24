@@ -18,6 +18,9 @@ fi
 if [[ $OSTYPE == darwin* ]] ; then
     TERM=dtterm ; export TERM
 fi
+if [[ -f /usr/share/terminfo/d/dtterm ]] ; then
+   TERM=dtterm ; export TERM 
+fi
 
 ###################################
 # Modules & Options
