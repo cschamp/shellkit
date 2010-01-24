@@ -59,21 +59,6 @@ export P4CLIENT
 export P4USER
 export P4PORT
 
-case $NODENAME in
-genoa)
-	# galileo (AlterCast) repository
-	P4CLIENT=${LOGNAME}_sol
-	P4USER=$LOGNAME
-	P4PORT='yorktown:1770'
-	;;
-*)
-	# installer group's repository
-	P4CLIENT=${LOGNAME}_mac
-	P4USER=$LOGNAME
-	P4PORT='redcloud:1700'
-	;;
-esac
-
 case $SYSTEM in
 SunOS*)
 	export MAILER ; MAILER=/usr/bin/mailx
@@ -83,7 +68,7 @@ SunOS*)
 	PATH=$PATH:/usr/local/mysql/bin:/usr/local/apache/bin
 	MANPATH=$MANPATH:/usr/local/mysql/man
 	stty sane
-	stty parenb tab3 erase '^H' kill '^U' intr '^C' werase '' echoe echok ixon -ixany ixoff
+	stty parenb tab3 erase '^H' kill '^U' intr '^C' werase '^W' echoe echok ixon -ixany ixoff
 	;;
 Darwin*)
 	export MAILER ; MAILER=/usr/bin/mailx
@@ -93,12 +78,18 @@ Darwin*)
 	PATH=$PATH:/usr/local/mysql/bin:/usr/local/apache/bin
 	MANPATH=$MANPATH:/usr/local/mysql/man
 	stty sane
-	stty parenb erase '^H' kill '^U' intr '^C' werase '' echoe echok ixon -ixany ixoff
+	stty parenb erase '^H' kill '^U' intr '^C' werase '^W' echoe echok ixon -ixany ixoff
+	;;
+Linux*)
+	export MAILER ; MAILER=/usr/bin/mailx
+	PATH=$PATH:$HOME/bin/linux
+	stty sane
+	stty tab3 erase '^H' kill '^U' intr '^C' werase '^W' echoe echok ixon -ixany ixoff
 	;;
 *)
 	echo "$HOME/.profile: Can't recognize SYSTEM=$SYSTEM"
 	stty sane
-	stty parenb erase '^H' kill '^U' intr '^C' werase '' echoe echok ixon -ixany ixoff
+	stty parenb erase '^H' kill '^U' intr '^C' werase '^W' echoe echok ixon -ixany ixoff
 	;;
 esac
 
@@ -112,6 +103,16 @@ SunOS*)
 	if [ "$0" != -ksh ]
 	then
 		echo 'shell is /bin/ksh'
+		exec $SHELL
+	fi
+	;;
+Linux*)
+	# Linux. Assume we always have bash.
+	export SHELL	;	SHELL=/bin/bash
+	# if not already running bash
+	if [ -z "$BASH_VERSION" ]
+	then
+		echo 'shell is /bin/bash'
 		exec $SHELL
 	fi
 	;;
