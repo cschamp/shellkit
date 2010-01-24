@@ -6,7 +6,7 @@ fi
 
 PROMPT="%{$fg_no_bold[green]%}%24<..<%~%{$fg_no_bold[default]%} %(2L!%#%#!%#) "
 
-REGULAR_RPROMPT="%{[$fg_bold[$PCOLOR]%}%n%{$fg_no_bold[default]%}@%U%m%u]"
+REGULAR_RPROMPT="%{[$fg_bold[$PCOLOR]%}%n%{$fg_no_bold[default]%}@%{$fg_bold[$PCOLOR]%}%m%{$fg_no_bold[default]%}]"
 VT_RPROMPT="[%{$fg_bold[$PCOLOR]%}%n%{$fg_no_bold[default]%}@%U%m%u]"
 
 case $TERM in
@@ -22,7 +22,7 @@ case $TERM in
 	;;
   dtterm*)
     precmd() { print -Pn "\e]0;%~ ${DEPOT}|${P4CLIENT}\a" }
-	PROMPT="${REGULAR_RPROMPT} ${PROMPT}"
+	 PROMPT="${REGULAR_RPROMPT} ${PROMPT}"
     ;;
   *)
     RPROMPT=$REGULAR_RPROMPT ;;
