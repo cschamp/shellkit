@@ -9,5 +9,5 @@ export LD_LIBRARY_PATH=/usr.local/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=/usr/local/lib/python2.5/site-packages:$PYTHONPATH
 export P4CONFIG=.p4config
 # XXX [[ -f /Applications/p4merge.app/Contents/MacOS/p4merge ]] && export P4DIFF=/Applications/p4merge.app/Contents/MacOS/p4merge
-[[ -f /usr/bin/chdiff ]] && export P4DIFF="/usr/bin/chdiff --wait"
-[[ -x ~/bin/gitchanges.sh ]] && export GIT_EXTERNAL_DIFF=~/bin/gitchanges.sh
+# [[ -f /usr/bin/chdiff ]] && export P4DIFF="/usr/bin/chdiff --wait"
+# [[ -x ~/bin/gitchanges.sh ]] && export GIT_EXTERNAL_DIFF=~/bin/gitchanges.sh
