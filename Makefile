@@ -11,7 +11,7 @@ all install:
 	cp -Rvp $(SRC) $(DST)
 
 installNFS:
-	cp -Rvp $(SRC) $(DSTNFS)
+	cp -RXpv $(SRC) $(DSTNFS)
 
 import:
 	for i in $(SRC) ; do echo $$i ; cp -Rvp $(DST)/$$i . ;  done
