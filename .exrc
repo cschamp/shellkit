@@ -30,4 +30,7 @@ set hlsearch
 " color jhlight
 color greens
 syntax on
-
+if &background == "dark"
+   highlight Comment cterm=bold ctermfg=green ctermbg=black
+   highlight Search cterm=bold ctermfg=white ctermbg=cyan
+endif

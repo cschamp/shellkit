@@ -1,0 +1,40 @@
+[github]
+   user = cschamp
+   token = efd4848dcff4ca0240e3e717782c2561
+
+[user]
+   email = cschamp@gmail.com
+   name = cschamp
+
+[color]
+   diff = auto
+   status = auto
+   branch = auto
+
+[alias]
+   co = checkout
+   st = status
+   stat = status
+   br = branch
+   ba = branch -a
+   std = stash drop
+   sta = stash apply
+   stp = stash pop
+   stc = stash clear
+   stl = stash list
+   sts = stash save
+   logs = log --summary
+   cpk = cherry-pick
+   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+
+[diff]
+#   external = /home/trenner/git/scripts/git-tkdiff.sh
+#   external = /usr/bin/diff
+
+[core]
+	pager = 
+#	excludesfile = "/home/cschamp/.git/gitexcludes"
+#[giggle]
+#  compact-mode = true
+#	main-window-maximized = false
+#	main-window-geometry = 1424x1062+136+25
