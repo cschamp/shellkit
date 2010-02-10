@@ -26,6 +26,7 @@ map & 1G!Gexpand -2
 map  0i/* XXX $a */
 map  07x$xxx
 set hlsearch
+set incsearch
 " set background=light
 " color jhlight
 color greens
