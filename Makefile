@@ -19,3 +19,6 @@ import:
 importNFS:
 	for i in $(SRC) ; do echo $$i ; cp -Rvp $(DSTNFS)/$$i . ;  done
 
+distro:
+	tar -cvz -C .. -f ../shellkit.tgz shellkit
+
