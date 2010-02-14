@@ -20,5 +20,5 @@ importNFS:
 	for i in $(SRC) ; do echo $$i ; cp -Rvp $(DSTNFS)/$$i . ;  done
 
 distro:
-	tar -cvz -C .. -f ../shellkit.tgz shellkit
+	tar -cvz -C .. -f ../shellkit.tgz --exclude .git shellkit
 
