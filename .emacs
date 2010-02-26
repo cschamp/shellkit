@@ -105,7 +105,7 @@
 (unless (or (featurep 'xemacs) (featurep 'aquamacs))
   (setq current-language-environment "Latin-1")
   (set-terminal-coding-system 'latin-1)
-  (standard-display-european 1)
+  (set-language-environment "English")
   (set-input-mode (car (current-input-mode))
 		  (nth 1 (current-input-mode))
 		  0))
