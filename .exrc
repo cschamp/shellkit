@@ -23,15 +23,32 @@ map & 1G!Gexpand -2
 " map @ :se noai1GO/* * $Id: exrc,v 1.3 2002/11/09 00:52:47 schamp Exp $ * * Revision 1.1  2001/01/22 18:44:37  cschamp
 " map @ :se noai1GO/* * $Id: exrc,v 1.3 2002/11/09 00:52:47 schamp Exp $ * * Initial revision
 " map @ :se noai1GO/* * $Id: exrc,v 1.3 2002/11/09 00:52:47 schamp Exp $ * * */:se ai
-map  0i/* XXX $a */
-map  07x$xxx
 set hlsearch
 set incsearch
-" set background=light
-" color jhlight
 color greens
 syntax on
 if &background == "dark"
    highlight Comment cterm=bold ctermfg=green ctermbg=black
    highlight Search cterm=bold ctermfg=white ctermbg=cyan
 endif
+"
+" Comment functions
+function! PoundComment()
+   map  0i# XXX
+   map  05x
+endfunction
+function! CComment()
+   map  0i/* XXX $a */
+   map  07x$xxx
+endfunction
+autocmd FileType perl call PoundComment()
+autocmd FileType python call PoundComment()
+autocmd FileType sh call PoundComment()
+autocmd FileType c call CComment()
+autocmd FileType cpp call CComment()
+function! MakeStuff()
+   map  0i# XXX
+   map  05x
+   set noexpandtab
+endfunction
+autocmd FileType make call MakeStuff()
