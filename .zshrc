@@ -82,7 +82,7 @@ is4 && setopt NO_list_rows_first
        setopt NO_multios
        setopt NO_nomatch
        setopt nohup
-       setopt NO_notify
+       setopt notify
        setopt path_dirs
        setopt NO_print_exit_value                                             
        setopt pushd_ignore_dups 
