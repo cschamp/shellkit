@@ -1,7 +1,7 @@
 # paths
 local usrlocal=/usr/local
 typeset -U path manpath fpath # no dupes
-path=(~/bin ~/bin/checker /build/trees/bin usrlocal/bin $usrlocal/sbin /usr/bin /usr/sbin /bin /sbin /Developer/usr/bin /usr/games /usr/bin/X11 $path)
+path=(~/bin ~/bin/checker /build/trees/bin /build/apps/bin usrlocal/bin $usrlocal/sbin /usr/bin /usr/sbin /bin /sbin /Developer/usr/bin /usr/games /usr/bin/X11 $path)
 manpath=(/usr/share/man /usr/local/man /usr/X11R6/man /opt/vmware/man $manpath)
 export MANPATH
 fpath=(~/.zsh/functions $fpath)
