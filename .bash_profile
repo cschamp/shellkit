@@ -8,7 +8,7 @@ unset MAILCHECK
 PATH=${HOME}/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 PATH=${PATH}:/Developer/Tools
 PATH=${PATH}:/usr/local/pgsql/bin:/usr/local/mysql/bin
-PATH=${PATH}:/build/trees/bin
+PATH=${PATH}:/build/trees/bin:/build/apps/bin
 export PATH
 
 MANPATH=/usr/local/pgsql/man:/usr/local/man:${MANPATH:="${HOME}/man:/usr/local/share/man:/usr/share/man"}
