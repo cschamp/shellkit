@@ -39,10 +39,10 @@ beep() {
 bld() {
   case `hostname` in
      cschamp-zr1*)
-        make -C /usr/local/build/git/hosted09/bora-vmsoft VERBOSE=0 OBJDIR=release $1 2>&1 |tee $1.log
+        make -C /usr/local/build/git/hosted09/bora-vmsoft VERBOSE=0 OBJDIR=beta $1 2>&1 |tee $1.log
         ;;
      *)
-         ssh ${USER}@cschamp-zr1 make -C /usr/local/build/git/hosted09/bora-vmsoft VERBOSE=0 OBJDIR=release $1 2>&1 |tee /usr/local/build/git/hosted09/$1-$$.log
+         ssh ${USER}@cschamp-zr1 make -C /usr/local/build/git/hosted09/bora-vmsoft VERBOSE=0 OBJDIR=beta $1 2>&1 |tee /usr/local/build/git/hosted09/$1-$$.log
         ;;
   esac
 }
@@ -257,6 +257,10 @@ lst() { # list files by type
 
 mf() {
   firefox "$1" &
+}
+
+mk() {
+   make $@ 2>&1 |tee errs$$.log
 }
 
 mvc() {
