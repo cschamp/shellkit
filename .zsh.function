@@ -206,6 +206,10 @@ haveNetwork() {
   esac
 }
 
+hg() {
+   history 1 | grep $1
+}
+
 i() { # install package $1
   case $OSTYPE in
     openbsd*)
