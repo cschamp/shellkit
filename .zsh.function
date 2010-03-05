@@ -206,7 +206,7 @@ haveNetwork() {
   esac
 }
 
-hg() {
+hgrep() {
    history 1 | grep $1
 }
 
