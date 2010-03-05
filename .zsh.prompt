@@ -12,17 +12,17 @@ VT_RPROMPT="[%{$fg_bold[$PCOLOR]%}%n%{$fg_no_bold[default]%}@%U%m%u]"
 case $TERM in
   rxvt|xterm*)
     RPROMPT=$REGULAR_RPROMPT 
-    preexec() { print -Pn "\e]0;%m:%~ [$1]\a" }
-    precmd() { print -Pn "\e]0;%m:%~\a" }
+    preexec() { print -Pn "\e]0;%m:%60<..<%~ [$1]\a" }
+    precmd() { print -Pn "\e]0;%m:%60<..<%~\a" }
 	;;
   sun*|vt*|screen*)
     RPROMPT=$VT_RPROMPT
-    preexec() { print -Pn "\ek%n@%m $1\e\\" }
+    preexec() { print -Pn "\ek%n@%m [$1]\e\\" }
     precmd() { print -Pn "\ek%n@%m\e\\" }
 	;;
   dtterm*)
-    preexec() { print -Pn "\e]0;%m:%~ [$1]\a" }
-    precmd() { print -Pn "\e]0;%m:%~\a" }
+    preexec() { print -Pn "\e]0;%m:%60<..<%~ [$1]\a" }
+    precmd() { print -Pn "\e]0;%m:%60<..<%~\a" }
 	 PROMPT="${REGULAR_RPROMPT} ${PROMPT}"
     ;;
   *)
