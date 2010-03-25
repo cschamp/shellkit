@@ -13,6 +13,7 @@ alias c='cd ..'
 alias cp='cp -i'
 alias d='dirs -v'
 alias decodebase64='python -c "import base64, sys ; print base64.decodestring(sys.argv[1])"'
+alias df="df -H"
 alias dict='dict.sh'
 alias diff='diff -u'
 alias digs='dig +short'
