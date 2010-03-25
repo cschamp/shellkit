@@ -36,7 +36,7 @@ beep() {
  fi
 }
 
-bld() {
+bldit() {
   case `hostname` in
      cschamp-zr1*)
         make -C /usr/local/build/git/hosted09/bora-vmsoft VERBOSE=0 OBJDIR=beta $1 2>&1 |tee $1.log
