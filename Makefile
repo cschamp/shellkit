@@ -3,7 +3,7 @@ DST = $(HOME)
 DSTNFS = $(HOME)/cschamp
 
 SRC = .bash_profile .bashrc .emacs .emacs-asleep \
-    .emacsd .exrc .gitconfig .hgrc .kshrc .tcshrc .vim \
+    .emacsd .exrc .gitconfig .hgrc .kshrc .tcshrc .vim .vimrc \
     .zlogin .zlogout .zsh .zsh.alias .zsh.console .zsh.function \
     .zsh.prompt .zshenv .zshrc
 

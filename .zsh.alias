@@ -20,6 +20,7 @@ alias digs='dig +short'
 alias dos2unix="perl -i -pe 's/\r$//'"
 #alias evolution='psg evolution | nth 2 | xargs kill -9 2> /dev/null ; evolution 2> /dev/null &'
 alias feh='feh -Z -F -p'
+alias grep='grep --color=auto'
 alias jed='emacs -nw'
 alias la='ls -a'
 alias ll='ls -hl'
@@ -39,6 +40,7 @@ alias sc='screen -R -D -A -r main'
 #alias sim='sim > /dev/null 2>&1'
 alias up='s apt-get update'
 alias top='top -s 1' # for non-linux
+if [ -x /usr/bin/vim ] ; then alias vi=/usr/bin/vim ; fi
 alias wget-mirror='wget -r -nv -nH --no-parent'
 alias x='exit'
 alias xterm="${XTERM}"

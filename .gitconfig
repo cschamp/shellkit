@@ -1,15 +1,11 @@
-[github]
-   user = cschamp
-   token = efd4848dcff4ca0240e3e717782c2561
-
 [user]
-   email = cschamp@gmail.com
-   name = cschamp
+	name = Craig Schamp
+	email = cschamp@vmware.com
 
 [color]
-   diff = auto
-   status = auto
-   branch = auto
+	diff = auto
+	status = auto
+	branch = auto
 
 [alias]
    co = checkout

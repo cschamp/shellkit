@@ -97,6 +97,10 @@ cp-other() {
   tar cf - "$1" | (cd $2 ; tar xfp -)
 }
 
+deb2tar() {
+   dpkg-deb --fsys-tarfile $1 >| `basename $1 .deb`.tar
+}
+
 debian-doc() {
   zmore /usr/share/doc/$1/$2
 }
@@ -206,7 +210,7 @@ haveNetwork() {
   esac
 }
 
-hgrep() {
+hg() {
    history 1 | grep $1
 }
 
