@@ -1,4 +1,4 @@
-" .vimrc
+".vimrc
 map g 1G
 map e $
 map - :n#
@@ -28,6 +28,10 @@ if &background == "dark"
    highlight Comment cterm=bold ctermfg=green ctermbg=black
    highlight Search cterm=bold ctermfg=white ctermbg=cyan
 endif
+" whitespace handling
+highlight WhiteSpaceEOL ctermbg=red guibg=red
+match WhiteSpaceEOL /\s\+$/
+autocmd WinEnter * match WhiteSpaceEOL /\s\+$/
 "
 " Language functions
 function! PythonStuff()
