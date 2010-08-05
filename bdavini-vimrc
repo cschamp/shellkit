@@ -1,0 +1,29 @@
+autocmd BufRead,BufNewFile *.py syntax on
+autocmd BufRead,BufNewFile *.py set ai
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+
+" to close the omni-completion tip window
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+set autoindent
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set hidden
+set number
+filetype indent on
+syntax on
+set background=dark
+
+inoremap <Nul> <C-x><C-o>
+
+python << EOF
+import os
+import sys
+import vim
+for p in sys.path:
+    if os.path.isdir(p):
+        vim.command(r"set path+=%s" % (p.replace(" ", r"\ ")))
+EOF
