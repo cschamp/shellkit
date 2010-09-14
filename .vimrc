@@ -27,6 +27,7 @@ syntax on
 if &background == "dark"
    highlight Comment cterm=bold ctermfg=green ctermbg=black
    highlight Search cterm=bold ctermfg=white ctermbg=cyan
+   highlight LineNr cterm=None
 endif
 " whitespace handling
 highlight WhiteSpaceEOL ctermbg=red guibg=red
@@ -63,3 +64,5 @@ autocmd FileType make call MakeStuff()
 " insert mode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+autocmd BufRead,BufNewFile *.wiki setfiletype Wikipedia
+autocmd BufRead,BufNewFile *.wikipedia.org* setfiletype Wikipedia
