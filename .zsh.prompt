@@ -4,7 +4,7 @@ else
    PCOLOR=red
 fi
 
-PROMPT="%{$fg_no_bold[green]%}%24<..<%~%{$fg_no_bold[default]%} %(2L!%#%#!%#) "
+PROMPT="%{$fg_no_bold[green]%}%24<..<%~%{$fg_no_bold[default]%} %{$fg_bold[$PCOLOR]%}%(2L!%#%#!%#)%{$fg_no_bold[default]%} "
 
 REGULAR_RPROMPT="%{[$fg_bold[$PCOLOR]%}%n%{$fg_no_bold[default]%}@%{$fg_bold[$PCOLOR]%}%m%{$fg_no_bold[default]%}]"
 VT_RPROMPT="[%{$fg_bold[$PCOLOR]%}%n%{$fg_no_bold[default]%}@%U%m%u]"
