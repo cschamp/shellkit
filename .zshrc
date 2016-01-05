@@ -37,7 +37,7 @@ is4 && autoload -U zed
 is4 && autoload -U zmv
 is4 && autoload -U edit-command-line 
 is4 && autoload -U compinit && compinit
-is4 && autoload -U colors && colors 
+       autoload -U colors && colors 
 is4 && autoload -U insert-files
 
 # mailcheck
