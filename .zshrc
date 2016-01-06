@@ -1,11 +1,12 @@
+autoload is-at-least
 # test function
 is4 () { 
-  [[ $ZSH_VERSION == 4.* ]]
-  return $?
+   is-at-least 4.0 && return true
+   return false
 }
-is4.2 () { 
-  [[ $ZSH_VERSION == 4.2.* ]]
-  return $?
+is4.2 () {
+   is-at-least 4.2 && return true
+   return false
 }
 
 # run zsh version 4 if it's available
@@ -37,7 +38,7 @@ is4 && autoload -U zed
 is4 && autoload -U zmv
 is4 && autoload -U edit-command-line 
 is4 && autoload -U compinit && compinit
-       autoload -U colors && colors 
+is4 && autoload -U colors && colors 
 is4 && autoload -U insert-files
 
 # mailcheck
