@@ -9,21 +9,14 @@ set aw
 set ts=3
 set sw=3
 set ht=4
-map \ :se sw=8
-:se ts=8
+map \ :se sw=8:se ts=8
 set nocompatible
 set expandtab
 set number
 set diffopt+=iwhite
 map # :se invnumber
 map & 1G!Gexpand -2
-" map @ :se noai
-1GO/*
- * $Id: exrc,v 1.3 2002/11/09 00:52:47 schamp Exp $
- *
- *
- */
-:se ai
+" map @ :se noai1GO/* * $Id: exrc,v 1.3 2002/11/09 00:52:47 schamp Exp $ * * */:se ai
 set hlsearch
 set incsearch
 set wildmenu
