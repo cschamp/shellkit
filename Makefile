@@ -7,11 +7,17 @@ SRC = .bash_profile .bashrc .emacs .emacs-asleep \
     .zlogin .zlogout .zsh .zsh.alias .zsh.console .zsh.function \
     .zsh.prompt .zshenv .zshrc
 
-all install: 
-	cp -Rvp $(SRC) $(DST)
+#ifeq (, $(shell which install))
+ INSTALL = cp -RXpv
+#else
+ #INSTALL = install -CSv
+#endif
+
+all install:
+	$(INSTALL) $(SRC) $(DST)
 
 installNFS:
-	cp -RXpv $(SRC) $(DSTNFS)
+	$(INSTALL) $(SRC) $(DSTNFS)
 
 import:
 	for i in $(SRC) ; do echo $$i ; cp -Rvp $(DST)/$$i . ;  done
