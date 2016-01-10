@@ -22,7 +22,7 @@
 
 (defun id ()
   (interactive)
-  (insert "Craig Schamp <chs@dog-star.com>"))
+  (insert "Craig Schamp <cshamp@gmail.com>"))
 
 (defun kill-to-eof ()
   (interactive)
@@ -183,7 +183,7 @@
 ;;  (if (is-buffer-to-htmlize) (htmlize-and-exit) (flyspell-mode))))
 
 ;; associate file patterns and modes
-(setq auto-mode-alist 
+(setq auto-mode-alist
       (append '(("\\.texi" 		      	     . texi-outline)
 		("\\.[jp]y" 		      	     . python-outline)
 		("pf\\.conf" 		      	     . pf-mode)
