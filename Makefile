@@ -7,11 +7,7 @@ SRC = .bash_profile .bashrc .emacs .emacs-asleep \
     .zlogin .zlogout .zsh .zsh.alias .zsh.console .zsh.function \
     .zsh.prompt .zshenv .zshrc
 
-#ifeq (, $(shell which install))
- INSTALL = cp -RXpv
-#else
- #INSTALL = install -CSv
-#endif
+INSTALL = cp -RXpv
 
 all install:
 	$(INSTALL) $(SRC) $(DST)
