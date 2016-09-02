@@ -7,6 +7,7 @@ alias S='sort'
 alias T='tail'
 
 alias add='awk "{s=s+\$1} END {print s}"'
+alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
 alias al='xautolock -time 5 -resetsaver -corners ++++ -cornerdelay 5 -cornerredelay &'
 alias aptsh='apt-cache show'
 alias c='cd ..'
