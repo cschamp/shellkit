@@ -11,6 +11,4 @@ export P4CONFIG=.p4config
 # XXX [[ -f /Applications/p4merge.app/Contents/MacOS/p4merge ]] && export P4DIFF=/Applications/p4merge.app/Contents/MacOS/p4merge
 # [[ -f /usr/bin/chdiff ]] && export P4DIFF="/usr/bin/chdiff --wait"
 # [[ -x ~/bin/gitchanges.sh ]] && export GIT_EXTERNAL_DIFF=~/bin/gitchanges.sh
-export http_proxy="http://proxy.eng.vmware.com:3128"
-export ftp_proxy="http://proxy.eng.vmware.com:3128"
 export LESS="-q -i -s -c -M"
