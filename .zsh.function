@@ -392,6 +392,12 @@ setlocale() {
   fi
 }
 
+usbtty() {
+   # sudo screen /dev/tty.usbserial-A600EGAU 115200
+   local t=/dev/tty.usbserial-*
+   sudo screen $~t 115200
+}
+
 xpop() { # my precious :)
   set -A commandAndArgs ${=1} # split $1 as if SH_WORD_SPLIT was set
   shift
