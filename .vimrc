@@ -22,7 +22,7 @@ set incsearch
 set wildmenu
 set smartcase
 set spelllang=en_us
-color greens
+" color greens
 autocmd BufRead,BufNewFile *.rs setfiletype rust
 syntax on
 if &background == "dark"
