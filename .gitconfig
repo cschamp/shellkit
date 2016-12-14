@@ -28,7 +28,7 @@
 #   external = /usr/bin/diff
 
 [core]
-	pager = 
+#	pager = 
 #	excludesfile = "/home/cschamp/.git/gitexcludes"
 #[giggle]
 #  compact-mode = true
