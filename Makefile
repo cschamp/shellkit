@@ -1,6 +1,5 @@
 # Install dot-files in home directory
 DST = $(HOME)
-DSTNFS = $(HOME)/cschamp
 
 SRC = .bash_profile .bashrc .emacs .emacs-asleep \
     .emacsd .exrc .gitconfig .hgrc .kshrc .tcshrc .vim .vimrc \
@@ -10,10 +9,7 @@ SRC = .bash_profile .bashrc .emacs .emacs-asleep \
 INSTALL = cp -RXpv
 
 all install:
-	$(INSTALL) $(SRC) $(DST)
-
-installNFS:
-	$(INSTALL) $(SRC) $(DSTNFS)
+	-for i in $(SRC) ; do echo $$i ; cp -Rvp $$i $(DST)/$$i ;  done
 
 import:
 	for i in $(SRC) ; do echo $$i ; cp -Rvp $(DST)/$$i . ;  done

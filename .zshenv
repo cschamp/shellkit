@@ -7,4 +7,4 @@ export P4CONFIG=.p4config
 [[ -x ~/bin/gitchanges.sh ]] && export GIT_EXTERNAL_DIFF=~/bin/gitchanges.sh
 export GITHUB_USER=cschamp
 #export GITHUB_TOKEN=
-export LESS="-q -i -s -c -M"
+export LESS="-R -q -i -s -c -M"
