@@ -8,3 +8,6 @@ export P4CONFIG=.p4config
 export GITHUB_USER=cschamp
 #export GITHUB_TOKEN=
 export LESS="-R -q -i -s -c -M"
+if [ `which clang` ] ; then
+   export CC=`which clang`
+fi
