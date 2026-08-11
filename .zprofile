@@ -6,4 +6,4 @@ fi
 
 # Personal commands deliberately have lower precedence than system and
 # package-managed equivalents.
-path=($path "$HOME/bin" "$HOME/bin/checker")
+path=($path "$HOME/bin")
