@@ -1,14 +1,10 @@
 # paths
-local usrlocal=/usr/local
+
 typeset -U path manpath fpath # no dupes
-path=(~/bin ~/bin/checker usrlocal/bin $usrlocal/sbin /usr/bin /usr/sbin /bin /sbin /Developer/usr/bin /usr/local/bin /build/trees/bin /build/apps/bin /usr/games /usr/bin/X11 $path /Applications/Postgres.app/Contents/Versions/latest/bin)
+path=(~/bin ~/bin/checker /usr/local/bin $path)
+
 fpath=(~/.zsh/functions $fpath)
-export P4CONFIG=.p4config
-[[ -x ~/bin/gitchanges.sh ]] && export GIT_EXTERNAL_DIFF=~/bin/gitchanges.sh
-export GITHUB_USER=cschamp
-#export GITHUB_TOKEN=
-export LESS="-R -q -i -s -c -M"
-if [ `which clang` ] ; then
-   export CC=`which clang`
-fi
+
+export LESS='-R -q -i -s -c -M'
+
 eval "$(/opt/homebrew/bin/brew shellenv)"
