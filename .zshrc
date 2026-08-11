@@ -9,20 +9,6 @@ is4.2 () {
    return false
 }
 
-# run zsh version 4 if it's available
-ZSH4=/usr/local/bin/zsh
-if ! is4 && [[ $OSTYPE == solaris* ]] && [ -f $ZSH4 ] ; then
-  SHELL=$ZSH4 $ZSH4 -l && echo about to exit && sleep 3 # last parts for debug
-  exit
-fi
-
-if [[ $OSTYPE == darwin* ]] ; then
-    TERM=dtterm ; export TERM
-fi
-if [[ -f /usr/share/terminfo/d/dtterm ]] ; then
-   TERM=dtterm ; export TERM
-fi
-
 ###################################
 # Modules & Options
 ###################################
