@@ -9,4 +9,4 @@ unset MANPATH
 # functions deliberately follow the remaining system and vendor functions.
 fpath=(${fpath:#/usr/local/share/zsh/site-functions} "$HOME/.zsh/functions")
 
-export LESS='-R -q -i -s -c -M'
+export LESS='-R -q -i -s -c -M -X'
