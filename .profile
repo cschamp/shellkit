@@ -54,11 +54,6 @@ MANPATH=/usr/share/man:/usr/man:/usr/local/man:$HOME/man
 export PYTHONPATH
 PYTHONPATH=/usr/local/lib/python2.5/site-packages:$PYTHONPATH
 
-export P4EDITOR	;	P4EDITOR=/usr/bin/vi
-export P4CLIENT
-export P4USER
-export P4PORT
-
 case $SYSTEM in
 SunOS*)
 	export MAILER ; MAILER=/usr/bin/mailx

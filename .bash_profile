@@ -23,6 +23,5 @@ PAGER=/usr/bin/less	;	export PAGER
 LESS="-m -s"		;	export LESS
 MORE=-s			;	export MORE
 CVSEDITOR=/usr/bin/vi	;	export CVSEDITOR
-P4EDITOR=/usr/bin/vi	;	export P4EDITOR
 
 . $HOME/.bashrc

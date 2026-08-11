@@ -61,34 +61,6 @@ if [ "$INTERACTIVE" = "true" ] ; then
 		find ~/projects/psmake/PSMain/main -name '*.pbxproj' -or -name '*.xcconfig' -print0 | xargs -0 grep $1
 	}
 
-	ws() {
-		case $1 in
-		yorktown)
-			export P4PORT=yorktown.corp.adobe.com:1700
-			export P4CONFIG=${HOME}/.yorktown
-			DEPOT="${P4PORT/.corp.adobe.com/}"
-			;;
-		redcloud)
-			export P4PORT=redcloud.corp.adobe.com:1700
-			export P4CONFIG=${HOME}/.redcloud
-			DEPOT="${P4PORT/.corp.adobe.com/}"
-			;;
-		redcloud:1820)
-			export P4PORT=redcloud.corp.adobe.com:1820
-			export P4CONFIG=${HOME}/.redcloud-1820
-			DEPOT="${P4PORT/.corp.adobe.com/}"
-			;;
-		redcloud:1850)
-			export P4PORT=redcloud.corp.adobe.com:1850
-			export P4CONFIG=${HOME}/.redcloud-1850
-			DEPOT="${P4PORT/.corp.adobe.com/}"
-			;;
-		*)
-			echo "Unknown workspace: $1"
-			;;
-		esac
-	}
-
     if [ "${TERM##dtterm*}" = "" -o "${TERM##xterm*}" = "" -o "${TERM##vt*}" = "" -o "${TERM}" = "sa" -o "${TERM}" = "d0" ] ; then
 
 	    # put $* in terminal window title bar
