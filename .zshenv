@@ -1,10 +1,12 @@
-# paths
+# Keep zsh's path arrays free of duplicate entries. Executable-path
+# initialization belongs in .zprofile, after macOS has run path_helper.
+typeset -U path fpath
 
-typeset -U path manpath fpath # no dupes
-path=(~/bin ~/bin/checker /usr/local/bin $path)
+# Let man derive its search path from the executable path and macOS defaults.
+unset MANPATH
 
-fpath=(~/.zsh/functions $fpath)
+# Ignore completions left by the retired Intel Homebrew installation. Personal
+# functions deliberately follow the remaining system and vendor functions.
+fpath=(${fpath:#/usr/local/share/zsh/site-functions} "$HOME/.zsh/functions")
 
 export LESS='-R -q -i -s -c -M'
-
-eval "$(/opt/homebrew/bin/brew shellenv)"
