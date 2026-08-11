@@ -11,3 +11,4 @@ export LESS="-R -q -i -s -c -M"
 if [ `which clang` ] ; then
    export CC=`which clang`
 fi
+eval "$(/opt/homebrew/bin/brew shellenv)"
