@@ -274,3 +274,5 @@ local hostFile=~/.zsh_$HOST
 [[ -f $hostFile ]] && source $hostFile
 
 haveNetwork && have keychain && keychain-init
+
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

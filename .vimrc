@@ -22,6 +22,8 @@ set incsearch
 set wildmenu
 set smartcase
 set spelllang=en_us
+" Keep Vim's display visible after exiting.
+set t_ti= t_te=
 " color greens
 autocmd BufRead,BufNewFile *.rs setfiletype rust
 syntax on
