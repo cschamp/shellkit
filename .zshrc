@@ -20,25 +20,25 @@ if [[ $OSTYPE == darwin* ]] ; then
     TERM=dtterm ; export TERM
 fi
 if [[ -f /usr/share/terminfo/d/dtterm ]] ; then
-   TERM=dtterm ; export TERM 
+   TERM=dtterm ; export TERM
 fi
 
 ###################################
 # Modules & Options
 ###################################
 
-# modules 
-is4 && zmodload -i zsh/complist 
+# modules
+is4 && zmodload -i zsh/complist
 is4 && zmodload -i zsh/parameter
 is4.2 && _comp_setup+=$'\ntypeset -a userdirs'
-is4 && zmodload -i zsh/mathfunc 
+is4 && zmodload -i zsh/mathfunc
 
 # modes
-is4 && autoload -U zed 
+is4 && autoload -U zed
 is4 && autoload -U zmv
-is4 && autoload -U edit-command-line 
+is4 && autoload -U edit-command-line
 is4 && autoload -U compinit && compinit
-is4 && autoload -U colors && colors 
+is4 && autoload -U colors && colors
 is4 && autoload -U insert-files
 
 # mailcheck
@@ -52,32 +52,32 @@ alias run-help > /dev/null && unalias run-help
        setopt append_history
        setopt NO_auto_cd
        setopt NO_auto_menu
-       setopt auto_name_dirs 
-       setopt auto_pushd 
+       setopt auto_name_dirs
+       setopt auto_pushd
        setopt autolist
-is4 && setopt bare_glob_qual 
+is4 && setopt bare_glob_qual
        setopt NO_beep
-is4 && setopt NO_check_jobs 
+is4 && setopt NO_check_jobs
        setopt NO_clobber
        setopt cdable_vars
        setopt complete_in_word
        setopt correct
        setopt extended_glob
-       setopt extended_history 
+       setopt extended_history
        setopt NO_flow_control
-       setopt glob_complete                                                   
-       setopt hash_cmds 
-       setopt hash_dirs 
-       setopt hist_allow_clobber 
+       setopt glob_complete
+       setopt hash_cmds
+       setopt hash_dirs
+       setopt hist_allow_clobber
        setopt hist_ignore_space
-is4 && setopt hist_save_no_dups 
-is4 && setopt hist_ignore_all_dups 
+is4 && setopt hist_save_no_dups
+is4 && setopt hist_ignore_all_dups
        setopt hist_reduce_blanks
        setopt hist_verify
 is4 && setopt inc_append_history
        setopt ksh_option_print
-is4 && setopt list_packed 
-is4 && setopt NO_list_rows_first 
+is4 && setopt list_packed
+is4 && setopt NO_list_rows_first
        setopt mark_dirs
        setopt NO_menucomplete
        setopt NO_multios
@@ -85,13 +85,13 @@ is4 && setopt NO_list_rows_first
        setopt nohup
        setopt notify
        setopt path_dirs
-       setopt NO_print_exit_value                                             
-       setopt pushd_ignore_dups 
-       setopt NO_pushd_minus 
+       setopt NO_print_exit_value
+       setopt pushd_ignore_dups
+       setopt NO_pushd_minus
        setopt pushd_silent
-       setopt pushd_to_home                                                   
-       setopt rc_expand_param                                                 
-       setopt rc_quotes                                                       
+       setopt pushd_to_home
+       setopt rc_expand_param
+       setopt rc_quotes
        setopt NO_singlelinezle
 is4 && setopt share_history
 
@@ -227,7 +227,17 @@ is4 && zstyle ':completion:*:*:killall:*:processes-names' list-colors "=*=01;32"
 # HOST/OSTYPE specificities
 ###################################
 
-source ~/.zsh.prompt
+autoload -U promptinit
+promptinit
+
+PURE_CMD_MAX_EXEC_TIME=10
+
+zstyle :prompt:pure:git:dirty detailed yes
+zstyle :prompt:pure:path:separator dim yes
+zstyle :prompt:pure:git:stash show yes
+
+prompt pure
+
 source ~/.zsh.alias
 
 # OS specificities
