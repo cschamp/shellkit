@@ -31,7 +31,7 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGkCwwVFlUkbnVsbNQNDg8QERIT
-	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNALgAAAAAAABAQgAKAA18QFlNG
+	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNAMAAAAAAAABAQgAKAA18QFlNG
 	TW9ub1Rlcm1pbmFsLVJlZ3VsYXLSFxgZGlokY2xhc3NuYW1lWCRjbGFzc2VzVk5TRm9u
 	dKIZG1hOU09iamVjdAgRGiQpMjdJTFFTWF5nbnd+hY6QkpStsr3GzdAAAAAAAAABAQAA
 	AAAAAAAcAAAAAAAAAAAAAAAAAAAA2Q==
@@ -91,11 +91,11 @@
 	<key>WindowTitle</key>
 	<string>~</string>
 	<key>columnCount</key>
-	<integer>164</integer>
+	<integer>136</integer>
 	<key>name</key>
 	<string>My Homebrew</string>
 	<key>rowCount</key>
-	<integer>75</integer>
+	<integer>73</integer>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>
