@@ -2,11 +2,13 @@
 # initialization belongs in .zprofile, after macOS has run path_helper.
 typeset -U path fpath
 
+# Ignore broken completions left by the retired Intel Homebrew installation on
+# this Apple Silicon Mac. Do not suppress that path on systems that use it.
+if [[ $OSTYPE == darwin* && -x /opt/homebrew/bin/brew ]]; then
+  fpath=(${fpath:#/usr/local/share/zsh/site-functions})
+fi
+
 # Let man derive its search path from the executable path and macOS defaults.
 unset MANPATH
-
-# Ignore completions left by the retired Intel Homebrew installation. Personal
-# functions deliberately follow the remaining system and vendor functions.
-fpath=(${fpath:#/usr/local/share/zsh/site-functions} "$HOME/.zsh/functions")
 
 export LESS='-R -q -i -s -c -M -X'
