@@ -1,9 +1,8 @@
 # Install dot-files in a destination directory.
 DST ?= $(HOME)
 
-SRC = .bash_profile .bashrc .gitconfig .vim .vimrc .zlogin \
-    .zlogout .zprofile .zsh .zsh.alias .zsh.console .zsh.function \
-    .zshenv .zshrc
+SRC = .bash_profile .bashrc .gitconfig .vim .vimrc .zprofile .zsh \
+    .zsh.alias .zsh.function .zshenv .zshrc
 
 # Historical reference only; intentionally not deployed: .profile .zsh.prompt
 
