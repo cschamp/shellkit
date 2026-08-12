@@ -1,9 +1,11 @@
 # Install dot-files in a destination directory.
 DST ?= $(HOME)
 
-SRC = .bash_profile .bashrc .exrc .gitconfig .vim .vimrc .zlogin \
+SRC = .bash_profile .bashrc .gitconfig .vim .vimrc .zlogin \
     .zlogout .zprofile .zsh .zsh.alias .zsh.console .zsh.function \
-    .zsh.prompt .zshenv .zshrc
+    .zshenv .zshrc
+
+# Historical reference only; intentionally not deployed: .profile .zsh.prompt
 
 .PHONY: all install preflight force-install import importNFS distro
 

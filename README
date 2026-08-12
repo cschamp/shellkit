@@ -2,3 +2,5 @@ Type "make install" to copy these configuration files to your home directory.
 
 Type "make DST=destination" to copy these files to "destination".
 
+The .profile and .zsh.prompt files are retained for historical reference and
+are intentionally omitted from the deployment list in the Makefile.
