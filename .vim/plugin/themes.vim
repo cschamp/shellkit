@@ -143,7 +143,6 @@ amenu T&hemes.&OffWhite.CleanPHP :colo cleanphp<CR>
 amenu T&hemes.&OffWhite.JHLight :colo jhlight<CR>
 amenu T&hemes.&OffWhite.OceanLight :colo oceanlight<CR>
 amenu T&hemes.&OffWhite.PapayaWhip :colo papayawhip<CR>
-amenu T&hemes.&OffWhite.Python :colo python<CR>
 amenu T&hemes.&OffWhite.Sand :colo sand<CR>
 amenu T&hemes.&OffWhite.SeaShell :colo seashell<CR>
 amenu T&hemes.&OffWhite.SF :colo sf<CR>
