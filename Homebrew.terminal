@@ -7,11 +7,13 @@
 	<key>BackgroundColor</key>
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
-	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwTVSRudWxs0w0ODxARElVO
-	U1JHQlxOU0NvbG9yU3BhY2VWJGNsYXNzTxAuMC4wNjI3NDUwOTgwNCAwLjA2Mjc0NTA5
-	ODA0IDAuMDYyNzQ1MDk4MDQgMC44ABABgALSFBUWF1okY2xhc3NuYW1lWCRjbGFzc2Vz
-	V05TQ29sb3KiFhhYTlNPYmplY3QIERokKTI3SUxRU1ddZGp3fq+xs7jDzNTXAAAAAAAA
-	AQEAAAAAAAAAGQAAAAAAAAAAAAAAAAAAAOA=
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGlCwwVGSBVJG51bGzUDQ4PEBES
+	ExRVTlNSR0JcTlNDb2xvclNwYWNlXxASTlNDdXN0b21Db2xvclNwYWNlViRjbGFzc08Q
+	LjAuMDYyNzQ1MDk4MDQgMC4wNjI3NDUwOTgwNCAwLjA2Mjc0NTA5ODA0IDAuOQAQAYAC
+	gATSFhAXGFROU0lEEAGAA9IaGxwdWiRjbGFzc25hbWVYJGNsYXNzZXNcTlNDb2xvclNw
+	YWNloh4fXE5TQ29sb3JTcGFjZVhOU09iamVjdNIaGyEiV05TQ29sb3KiIR8ACAARABoA
+	JAApADIANwBJAEwAUQBTAFkAXwBoAG4AewCQAJcAyADKAMwAzgDTANgA2gDcAOEA7AD1
+	AQIBBQESARsBIAEoAAAAAAAAAgEAAAAAAAAAIwAAAAAAAAAAAAAAAAAAASs=
 	</data>
 	<key>CursorBlink</key>
 	<true/>
@@ -87,13 +89,13 @@
 	<key>UseBrightBold</key>
 	<true/>
 	<key>WindowTitle</key>
-	<string>~/Library/CloudStorage/Dropbox/Projects/EMHC-Es</string>
+	<string>~</string>
 	<key>columnCount</key>
-	<integer>111</integer>
+	<integer>164</integer>
 	<key>name</key>
 	<string>My Homebrew</string>
 	<key>rowCount</key>
-	<integer>54</integer>
+	<integer>75</integer>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>
