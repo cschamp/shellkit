@@ -4,8 +4,6 @@ DST ?= $(HOME)
 SRC = .gitconfig .vim .vimrc .zprofile \
     .zsh.alias .zsh.function .zshenv .zshrc
 
-# Historical reference only; intentionally not deployed: .profile .zsh.prompt
-
 .PHONY: all install preflight force-install import importNFS distro
 
 define deploy_files
