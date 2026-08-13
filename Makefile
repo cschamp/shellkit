@@ -1,10 +1,10 @@
 # Install dot-files in a destination directory.
 DST ?= $(HOME)
 
-SRC = .gitconfig .vim .vimrc .zprofile \
+SRC = .gitconfig .vimrc .zprofile \
     .zsh.alias .zsh.function .zshenv .zshrc
 
-.PHONY: all install preflight force-install import importNFS distro
+.PHONY: all install preflight force-install
 
 define deploy_files
 	@set -eu; \
@@ -69,12 +69,3 @@ install: preflight
 force-install:
 	@echo "force-install: bypassing divergence preflight for $(DST)" >&2
 	$(deploy_files)
-
-import:
-	for i in $(SRC) ; do echo $$i ; cp -Rvp $(DST)/$$i . ;  done
-
-importNFS:
-	for i in $(SRC) ; do echo $$i ; cp -Rvp $(DSTNFS)/$$i . ;  done
-
-distro:
-	tar -cvz -C .. -f ../shellkit.tgz --exclude .git shellkit

@@ -67,5 +67,3 @@ autocmd FileType make call MakeStuff()
 " insert mode
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-autocmd BufRead,BufNewFile *.wiki setfiletype Wikipedia
-autocmd BufRead,BufNewFile *.wikipedia.org* setfiletype Wikipedia
