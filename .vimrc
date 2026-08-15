@@ -24,16 +24,18 @@ set smartcase
 set spelllang=en_us
 " Keep Vim's display visible after exiting.
 set t_ti= t_te=
-" color greens
+"
+"Colors
 autocmd BufRead,BufNewFile *.rs setfiletype rust
-syntax on
-if &background == "dark"
-   highlight Comment cterm=bold ctermfg=green ctermbg=black
-   highlight Search cterm=bold ctermfg=white ctermbg=cyan
-   highlight LineNr cterm=None
+syntax enable
+set background=dark
+if has('termguicolors')
+   set termguicolors
 endif
+colorscheme retrobox
 " whitespace handling
-highlight WhiteSpaceEOL ctermbg=red guibg=red
+highlight WhiteSpaceEOL cterm=underline ctermbg=NONE
+   \ gui=undercurl guibg=NONE guisp=#fb5944
 match WhiteSpaceEOL /\s\+$/
 autocmd WinEnter * match WhiteSpaceEOL /\s\+$/
 "
