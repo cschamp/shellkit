@@ -9,11 +9,11 @@
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGlCwwVGSBVJG51bGzUDQ4PEBES
 	ExRVTlNSR0JcTlNDb2xvclNwYWNlXxASTlNDdXN0b21Db2xvclNwYWNlViRjbGFzc08Q
-	LzAuMDYyNzQ1MDk4MDQgMC4wNjI3NDUwOTgwNCAwLjA2Mjc0NTA5ODA0IDAuOTUAEAGA
-	AoAE0hYQFxhUTlNJRBABgAPSGhscHVokY2xhc3NuYW1lWCRjbGFzc2VzXE5TQ29sb3JT
-	cGFjZaIeH1xOU0NvbG9yU3BhY2VYTlNPYmplY3TSGhshIldOU0NvbG9yoiEfAAgAEQAa
-	ACQAKQAyADcASQBMAFEAUwBZAF8AaABuAHsAkACXAMkAywDNAM8A1ADZANsA3QDiAO0A
-	9gEDAQYBEwEcASEBKQAAAAAAAAIBAAAAAAAAACMAAAAAAAAAAAAAAAAAAAEs
+	KjAuMDYyNzQ1MDk4MDQgMC4wNjI3NDUwOTgwNCAwLjA2Mjc0NTA5ODA0ABABgAKABNIW
+	EBcYVE5TSUQQAYAD0hobHB1aJGNsYXNzbmFtZVgkY2xhc3Nlc1xOU0NvbG9yU3BhY2Wi
+	Hh9cTlNDb2xvclNwYWNlWE5TT2JqZWN00hobISJXTlNDb2xvcqIhHwAIABEAGgAkACkA
+	MgA3AEkATABRAFMAWQBfAGgAbgB7AJAAlwDEAMYAyADKAM8A1ADWANgA3QDoAPEA/gEB
+	AQ4BFwEcASQAAAAAAAACAQAAAAAAAAAjAAAAAAAAAAAAAAAAAAABJw==
 	</data>
 	<key>CursorBlink</key>
 	<true/>
@@ -89,13 +89,13 @@
 	<key>UseBrightBold</key>
 	<true/>
 	<key>WindowTitle</key>
-	<string>~/src/shellkit</string>
+	<string>~/Library/CloudStorage/Dropbox/Projects/bibliography/pilot</string>
 	<key>columnCount</key>
-	<integer>169</integer>
+	<integer>110</integer>
 	<key>name</key>
 	<string>My Homebrew</string>
 	<key>rowCount</key>
-	<integer>78</integer>
+	<integer>59</integer>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>
