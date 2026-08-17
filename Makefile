@@ -1,7 +1,7 @@
 # Install dot-files in a destination directory.
 DST ?= $(HOME)
 
-SRC = .gitconfig .vimrc .zprofile \
+SRC = .gitconfig .gvimrc .vimrc .zprofile \
     .zsh.alias .zsh.function .zshenv .zshrc
 
 .PHONY: all install preflight force-install
