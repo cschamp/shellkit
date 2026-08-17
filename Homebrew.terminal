@@ -21,9 +21,9 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwTVSRudWxs0w0ODxARElVO
-	U1JHQlxOU0NvbG9yU3BhY2VWJGNsYXNzSDAuOSAwIDAAEAKAAtIUFRYXWiRjbGFzc25h
-	bWVYJGNsYXNzZXNXTlNDb2xvcqIWGFhOU09iamVjdAgRGiQpMjdJTFFTV11kand+h4mL
-	kJukrK8AAAAAAAABAQAAAAAAAAAZAAAAAAAAAAAAAAAAAAAAuA==
+	U1JHQlxOU0NvbG9yU3BhY2VWJGNsYXNzTxARMC45MDE5NjA3ODQzIDAgMAAQAoAC0hQV
+	FhdaJGNsYXNzbmFtZVgkY2xhc3Nlc1dOU0NvbG9yohYYWE5TT2JqZWN0CBEaJCkyN0lM
+	UVNXXWRqd36SlJabpq+3ugAAAAAAAAEBAAAAAAAAABkAAAAAAAAAAAAAAAAAAADD
 	</data>
 	<key>CursorType</key>
 	<integer>0</integer>
@@ -31,7 +31,7 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGkCwwVFlUkbnVsbNQNDg8QERIT
-	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNAMAAAAAAAABAQgAKAA18QFlNG
+	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNAMgAAAAAAABAQgAKAA18QFlNG
 	TW9ub1Rlcm1pbmFsLVJlZ3VsYXLSFxgZGlokY2xhc3NuYW1lWCRjbGFzc2VzVk5TRm9u
 	dKIZG1hOU09iamVjdAgRGiQpMjdJTFFTWF5nbnd+hY6QkpStsr3GzdAAAAAAAAABAQAA
 	AAAAAAAcAAAAAAAAAAAAAAAAAAAA2Q==
@@ -89,13 +89,13 @@
 	<key>UseBrightBold</key>
 	<true/>
 	<key>WindowTitle</key>
-	<string>~/Library/CloudStorage/Dropbox/Projects/bibliography/pilot</string>
+	<string>~/src/shellkit</string>
 	<key>columnCount</key>
-	<integer>110</integer>
+	<integer>103</integer>
 	<key>name</key>
 	<string>My Homebrew</string>
 	<key>rowCount</key>
-	<integer>59</integer>
+	<integer>51</integer>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>
