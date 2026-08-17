@@ -43,28 +43,28 @@ autocmd WinEnter * match WhiteSpaceEOL /\s\+$/
 "
 " Language functions
 function! PythonStuff()
-   map  0i# XXX 
-   map  06x
-   set omnifunc=pythoncomplete#Complete
+   nnoremap <buffer> <C-X> 0i# XXX <Esc><CR>
+   nnoremap <buffer> <C-P> 06x<CR>
+   setlocal omnifunc=pythoncomplete#Complete
 endfunction
 function! PoundComment()
-   map  0i# XXX 
-   map  06x
+   nnoremap <buffer> <C-X> 0i# XXX <Esc><CR>
+   nnoremap <buffer> <C-P> 06x<CR>
 endfunction
 function! CComment()
-   map  0i/* XXX $a */
-   map  07x$xxx
+   nnoremap <buffer> <C-X> 0i/* XXX <Esc>$a */<Esc><CR>
+   nnoremap <buffer> <C-P> 07x$xxx<CR>
+endfunction
+function! MakeStuff()
+   nnoremap <buffer> <C-X> 0i# XXX <Esc><CR>
+   nnoremap <buffer> <C-P> 06x<CR>
+   setlocal noexpandtab
 endfunction
 autocmd FileType perl call PoundComment()
 autocmd FileType python call PythonStuff()
 autocmd FileType sh call PoundComment()
 autocmd FileType c call CComment()
 autocmd FileType cpp call CComment()
-function! MakeStuff()
-   map  0i# XXX 
-   map  06x
-   set noexpandtab
-endfunction
 autocmd FileType make call MakeStuff()
 " If you prefer the Omni-Completion tip window to close when a selection is
 " made, these lines close it on movement in insert mode or when leaving
