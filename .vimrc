@@ -32,7 +32,9 @@ set background=dark
 if has('termguicolors')
    set termguicolors
 endif
+" Set retrobox and then set it's background to be closer to black
 colorscheme retrobox
+highlight Normal guibg=#080808 ctermbg=232
 " whitespace handling
 highlight WhiteSpaceEOL cterm=underline ctermbg=NONE
    \ gui=undercurl guibg=NONE guisp=#fb5944
