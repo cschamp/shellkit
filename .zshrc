@@ -119,6 +119,7 @@ if (( $+functions[prompt_pure_setup] )); then
   zstyle :prompt:pure:git:dirty detailed yes
   zstyle :prompt:pure:path:separator dim yes
   zstyle :prompt:pure:git:stash show yes
+  zstyle :prompt:pure:path color 033
   prompt pure
 else
   PROMPT='%F{green}%n@%m%f %F{blue}%~%f %# '
