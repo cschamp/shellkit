@@ -6,6 +6,8 @@ typeset -U path fpath
 # this Apple Silicon Mac. Do not suppress that path on systems that use it.
 if [[ $OSTYPE == darwin* && -x /opt/homebrew/bin/brew ]]; then
   fpath=(${fpath:#/usr/local/share/zsh/site-functions})
+elif [[ -d "$HOME/.zsh/pure" ]] ; then
+  fpath=("$HOME/.zsh/pure" ${fpath:#/usr/local/share/zsh/site-functions})
 fi
 
 # Let man derive its search path from the executable path and macOS defaults.
