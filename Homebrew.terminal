@@ -31,10 +31,10 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
 	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGkCwwVFlUkbnVsbNQNDg8QERIT
-	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNAMgAAAAAAABAQgAKAA18QFlNG
-	TW9ub1Rlcm1pbmFsLVJlZ3VsYXLSFxgZGlokY2xhc3NuYW1lWCRjbGFzc2VzVk5TRm9u
-	dKIZG1hOU09iamVjdAgRGiQpMjdJTFFTWF5nbnd+hY6QkpStsr3GzdAAAAAAAAABAQAA
-	AAAAAAAcAAAAAAAAAAAAAAAAAAAA2Q==
+	FFZOU1NpemVYTlNmRmxhZ3NWTlNOYW1lViRjbGFzcyNAMAAAAAAAABAQgAKAA1ZNb25h
+	Y2/SFxgZGlokY2xhc3NuYW1lWCRjbGFzc2VzVk5TRm9udKIZG1hOU09iamVjdAgRGiQp
+	MjdJTFFTWF5nbnd+hY6QkpSboKu0u74AAAAAAAABAQAAAAAAAAAcAAAAAAAAAAAAAAAA
+	AAAAxw==
 	</data>
 	<key>FontAntialias</key>
 	<true/>
@@ -91,11 +91,11 @@
 	<key>WindowTitle</key>
 	<string>~/src/shellkit</string>
 	<key>columnCount</key>
-	<integer>103</integer>
+	<integer>148</integer>
 	<key>name</key>
 	<string>My Homebrew</string>
 	<key>rowCount</key>
-	<integer>51</integer>
+	<integer>46</integer>
 	<key>shellExitAction</key>
 	<integer>1</integer>
 	<key>type</key>
