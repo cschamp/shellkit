@@ -2,7 +2,8 @@
 DST ?= $(HOME)
 
 SRC = .gitconfig .gvimrc .vimrc .zprofile \
-    .zsh.alias .zsh.function .zshenv .zshrc
+    .zsh.alias .zsh.function .zshenv .zshrc \
+	 .config
 
 .PHONY: all install preflight force-install
 
